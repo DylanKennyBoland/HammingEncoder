@@ -6,7 +6,7 @@ The script can be called in two ways:
 
 ==== First way: Encode a message word ====
     
-    py HammingEncode.py --encode_msg=1 msg_bits=00110001110
+    py HammingEncode.py --encode_msg=1 --msg_bits=00110001110
 
 ==== Second way: Decode a codeword and correct any single-bit errors or detect any multi-bit errors ====
 

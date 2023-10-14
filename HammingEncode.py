@@ -24,7 +24,7 @@ The script can be called in two ways:
 
 ==== First way: Encode a message word ====
     
-    py HammingEncode.py --encode_msg=1 msg_bits=00110001110
+    py HammingEncode.py --encode_msg=1 --msg_bits=00110001110
 
 ==== Second way: decode a codeword and correct any single-bit errors or detect any multi-bit errors ====
 
@@ -43,7 +43,7 @@ not be used at the same time"""
 noEncodeDecodeArgSuppliedMsg = """The --encode_msg or --decode_msg switch should be supplied.
 If the --encode_msg switch is used, then the --msg_bits switch should also be supplied. An example
 of how the script would be called is:
-    py HammingEncode.py --encode_msg --msg_bit=<list_of_message_bits>
+    py HammingEncode.py --encode_msg --msg_bits=<list_of_message_bits>
     
 If the --decode_msg switch is used, then the --codeword_bits switch should also be supplied. An example
 of how the script would be called in this case is:
