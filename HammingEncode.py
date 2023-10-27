@@ -72,6 +72,9 @@ retrievedBitsMsg = """The retrieved message bits are {}"""
 incorrectMsgWordLen = """The message word supplied does not have the correct number of bits.
 It should contain {} bits"""
 
+incorrectCodewordLen = """The codeword supplied does not have the correct number of bits.
+It should contain {} bits"""
+
 # Function to handle the input arguments
 def parseArguments():
     parser = argparse.ArgumentParser(description = "TODO")
@@ -162,7 +165,7 @@ if __name__ == "__main__":
     elif decodeMsg:
         codewordLen = 16 # the number of bits in the coreword
         if len(codeword) != codewordLen:
-            print(incorrectMsgWordLen)
+            print(incorrectCodewordLen.format(codewordLen))
             exit()
     
     # ==== Error detection and correction ====
