@@ -136,12 +136,17 @@ if __name__ == "__main__":
         if len(msg_bits) != msgWordLen:
             print(incorrectMsgWordLen.format(msgWordLen))
             exit()
+
+        # ==== Compute the Parity Bits ====
         p1 = msg_bits[1] ^ msg_bits[4] ^ msg_bits[8] ^ msg_bits[0] ^ msg_bits[3] ^ msg_bits[6] ^ msg_bits[10]
         p2 = msg_bits[2] ^ msg_bits[5] ^ msg_bits[9] ^ msg_bits[0] ^ msg_bits[3] ^ msg_bits[6] ^ msg_bits[10]
         p3 = msg_bits[1] ^ msg_bits[2] ^ msg_bits[3] ^ msg_bits[7] ^ msg_bits[8] ^ msg_bits[9] ^ msg_bits[10]
         p4 = msg_bits[4] ^ msg_bits[5] ^ msg_bits[6] ^ msg_bits[7] ^ msg_bits[8] ^ msg_bits[9] ^ msg_bits[10]
         p0 = p1 ^ p2 ^ msg_bits[0] ^ msg_bits[1] ^ msg_bits[2] ^ msg_bits[3] ^ msg_bits[4] ^ msg_bits[5] ^ msg_bits[6] ^ msg_bits[7] ^ msg_bits[8] ^ msg_bits[9] ^ msg_bits[10]
+
+        # ==== Form the Codeword (i.e., the encoded message word) ====
         codeword = [p0, p1, p2, msg_bits[0], p3, msg_bits[1], msg_bits[2], msg_bits[3], p4, msg_bits[4], msg_bits[5], msg_bits[6], msg_bits[7], msg_bits[8], msg_bits[9], msg_bits[10]]
+
         codewordLen = len(codeword)
         print(encodingDoneMsg.format(msg_bits, codeword))
         
